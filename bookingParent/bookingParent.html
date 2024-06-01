@@ -1,0 +1,8 @@
+<template>
+    <template if:true={showListView}>
+        <c-booking-list onrecordselect={handleRecordSelect}></c-booking-list>
+    </template>
+    <template if:true={showRecordView}>
+        <c-booking-details record-id={selectedRecordId}></c-booking-details>
+    </template>
+</template>

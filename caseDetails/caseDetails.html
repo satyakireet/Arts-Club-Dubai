@@ -1,0 +1,124 @@
+<template>
+    <h1 class="slds-p-bottom_small slds-p-top_medium view_form_heading">Case Details</h1>
+   <!-- view form starts here -->
+   <template if:true={isViewForm}>
+    <lightning-record-view-form
+    object-api-name={objectApiName}
+    record-id={caseId}
+    density="Comfy"
+>
+    <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none  card-tile-body">
+        
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+               
+                <div class="  slds-text-align_left">
+            <lightning-output-field field-name={CaseNumber}> </lightning-output-field>
+                
+                </div>
+              <div class="  slds-text-align_left">
+                    <lightning-output-field field-name={Status}> </lightning-output-field>
+
+                </div>
+               
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+               
+       
+                
+                <div class="  slds-text-align_left">
+                    <lightning-output-field field-name={Subject}> </lightning-output-field>
+
+                </div>
+								
+								 <div class="  slds-text-align_left">
+                    <lightning-output-field field-name={description}> </lightning-output-field>
+
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+                <div class="slds-var-m-top_medium slds-m-bottom_medium slds-align_absolute-center cancel_btn_div">
+<!--                     <c-change-status-button url-state-parameters={urlParam}></c-change-status-button> -->
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+                <div class="slds-var-m-top_medium slds-m-bottom_medium slds-align_absolute-center submit_btn_div">
+                    <button  type="submit" class="edit_button" onclick={onEdit}>Edit Case </button>
+
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+
+       
+        </div>
+
+</lightning-record-view-form>
+</template>
+   <!-- view form ends here -->
+
+   <!-- record edit form start here -->
+   <template if:true={isEditForm}>
+   <lightning-record-edit-form
+    object-api-name={objectApiName}
+    record-id={caseId} 
+   
+>
+        <div class="card-tile-body slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+               
+                    <div class="  slds-text-align_left">
+                <lightning-input-field field-name={CaseNumber}> </lightning-input-field>
+                    
+                    </div>
+                
+										 <div class="  slds-text-align_left">
+                        <lightning-input-field field-name={Status} disabled="true" name="Status" onchange={handleChange}> </lightning-input-field>
+
+                    </div>
+                    
+        
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+                   
+                    <div class=" slds-text-align_left">
+                        <lightning-input-field field-name={Subject} name="Subject" onchange={handleChange}> </lightning-input-field>
+
+                    </div>
+
+                   	 <div class="  slds-text-align_left">
+                    <lightning-input-field field-name={description} name="Description" onchange={handleChange}> </lightning-input-field>
+
+                </div>
+        
+                </lightning-layout-item> 
+            </lightning-layout>
+
+            <!-- button section -->
+            <lightning-layout multiple-rows>
+                <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+                    <div class="slds-var-m-top_medium slds-m-bottom_medium slds-align_absolute-center cancel_btn_div">
+                        <button class="cancel_button" type="submit" onclick={onCancel}>Cancel</button>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="12" small-device-size="6" medium-device-size="6">
+                    <div class="slds-var-m-top_medium slds-m-bottom_medium slds-align_absolute-center submit_btn_div">
+                        <button class="edit_button" type="submit" onclick={onSubmit}>Submit Changes</button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            
+            <!-- button section -->
+
+     </div>
+
+   
+</lightning-record-edit-form>
+</template>
+   <!-- record edit form ends here -->
+
+    
+</template>

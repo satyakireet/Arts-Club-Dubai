@@ -1,0 +1,89 @@
+<template>
+
+        <div class=" slds-float_right">
+            <lightning-button variant="brand" label="New Case" title="Open popup"
+            onclick={showModalBox}>
+        </lightning-button>
+  
+        </div>
+
+
+    <!-- modal start -->
+    <template if:true={isShowModal}>
+
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header card-tile-body">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={hideModalBox}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Case</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_medium card-tile-body" id="modal-content-id-1" >
+                    <lightning-record-edit-form object-api-name="Case" onsuccess={successHandler}
+                        onerror={errorHandler}>
+                        <div class="slds-grid slds-gutters">
+
+                            <div class="slds-col slds-size_6-of-12">
+                                <lightning-input-field field-name="Type"></lightning-input-field>
+                                <lightning-input-field field-name="ContactId"></lightning-input-field>
+                                <lightning-input-field field-name="Transferred_Country__c"></lightning-input-field>
+                            </div>
+
+                            <div class="slds-col slds-size_6-of-12">
+                                <lightning-input-field field-name="Transfer_Type__c"></lightning-input-field>
+                                <lightning-input-field field-name="AccountId"></lightning-input-field>
+                                <lightning-input-field field-name="Membership_Application__c"></lightning-input-field>
+                            </div>
+
+                        </div>
+
+                        <div class="slds-grid slds-gutters">
+
+                            <div class="slds-col slds-size_12-of-12">
+                                <lightning-input-field field-name="Subject"></lightning-input-field>
+
+                            </div>
+
+                        </div>
+
+                        <div class="slds-grid slds-gutters">
+
+
+                            <div class="slds-col slds-size_12-of-12">
+                                <lightning-input-field field-name="Description"></lightning-input-field>
+
+                            </div>
+
+                        </div>
+                        <div style="padding-left: 35%">
+                            <lightning-button label="Cancel" type="reset" variant="brand"></lightning-button>
+                            &nbsp;&nbsp;
+                            <lightning-button label="Submit" type="submit" variant="brand"></lightning-button>
+                        </div>
+
+
+                    </lightning-record-edit-form>
+                </div>
+
+                <!-- modal footer start-->
+                <footer class="slds-modal__footer card-tile-body">
+                    <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Close</button>
+                </footer>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- modal end -->
+
+
+</template>

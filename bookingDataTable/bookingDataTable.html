@@ -1,0 +1,54 @@
+<template>
+    <!-- <template if:true={resultData}>
+    <lightning-card title="Booking Details" icon-name="standard:insights">
+        <lightning-datatable
+            key-field="Id"
+            columns={columns}
+            data={resultData}
+            hide-checkbox-column
+            
+            onrowaction={callRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template> -->
+<lightning-card>
+    <lightning-layout multiple-rows="">
+        <lightning-layout-item size="12" large-device-size="12" small-device-size="12" medium-device-size="12">
+            <div class="slds-text-align_center slds-box slds-box_x-small" style="color: white;margin-top: 0.3rem;background-color: rgb(99,99,99);"><strong>Event Details</strong></div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-text-align_left slds-box slds-box_xx-small" style="color: rgb(75,111,189);margin-top: 0.3rem;">
+                    <p>Booking Name</p>
+                </div>
+                <div class="slds-col slds-size_6-of-12  slds-text-align_left slds-box slds-box_xx-small" onclick={handleBookingClick} style="background-color: rgb(232,232,232); color: black;margin-top: 0.3rem;">
+                    {bookingName}
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-text-align_left slds-box slds-box_xx-small" style="color: rgb(75,111,189);margin-top: 0.3rem;">
+                    <p>Event Name</p>
+                </div>
+                <div class="slds-col slds-size_6-of-12  slds-text-align_left slds-box slds-box_xx-small" style="background-color: rgb(232,232,232); color: black;margin-top: 0.3rem;">
+                    {eventName}
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12  slds-text-align_left slds-box slds-box_xx-small" style="color: rgb(75,111,189);margin-top: 0.3rem;">
+                    <p>No Of Guests</p>
+                </div>
+                <div class="slds-col slds-size_6-of-12  slds-text-align_left slds-box slds-box_xx-small" style="background-color: rgb(232,232,232); color: black;margin-top: 0.3rem;">
+                    <p>{noOfGuests}</p>
+                </div>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12  slds-text-align_left slds-box_xx-small" style="color: rgb(75,111,189);margin-top: 0.3rem;">
+                    <lightning-button variant="brand" label="Check In" title="Check In" value={bookingId} onclick={handleClickCheckIn} class="slds-m-left_x-small"></lightning-button>
+                </div>
+                <div class="slds-col slds-size_6-of-12  slds-text-align_left slds-box_xx-small" style="color: black;margin-top: 0.3rem;">
+                    <lightning-button variant="brand" label="Check Out" title="Check Out" value={bookingId} onclick={handleClickCheckOut} class="slds-m-left_x-small"></lightning-button>
+                </div>
+            </div>
+
+        </lightning-layout-item>
+    </lightning-layout>
+</lightning-card>
+</template>

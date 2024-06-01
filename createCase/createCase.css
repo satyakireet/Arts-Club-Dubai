@@ -1,0 +1,23 @@
+.title-order,
+.submit-button {
+    font-weight: bold;
+}
+
+.navigate-hidden {
+    display: none;
+}
+
+.edit_button{
+    background-color:  #b6876d;
+    color: white;
+    border-radius: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-weight: 500;
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.submit_btn{
+		 --sds-c-button-brand-color-background:#b6876d !important;
+    color: white;
+}

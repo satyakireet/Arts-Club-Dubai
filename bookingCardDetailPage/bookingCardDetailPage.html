@@ -1,0 +1,61 @@
+<template>
+    <lightning-layout multiple-rows="">
+        <lightning-layout-item size="12" large-device-size="6" small-device-size="12" medium-device-size="6">
+        <div style="border: 0.5px solid rgb(182,135,109);"></div>
+            <h1 style="padding-top: 5%; font-size: 50px; font-family: GTSuper-Light, serif;">{getData.Name}</h1>
+            <p style="padding-top: 5%; font-size: 16px; font-family: p22-underground, sans-serif;">{getData.Description}</p>
+            <div style="margin-top: 10%;border: 0.5px solid rgb(182,135,109);"></div>
+    </lightning-layout-item>
+    <lightning-layout-item class="float2" size="12" large-device-size="6" small-device-size="12" medium-device-size="6">
+            <div style="margin-left:10%;">
+                <P style="font-size: 35px; font-family:GTSuper-Light, serif;">Event Details</P>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 25px; font-family:p22-underground, sans-serif;font-weight: 500;">
+                        Date
+                    </div>
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 20px; font-family:p22-underground, sans-serif; font-weight: 300;">
+                        {getData.Date}
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 25px; font-family:p22-underground, sans-serif;font-weight: 500;">
+                        Time
+                    </div>
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 20px; font-family:p22-underground, sans-serif; font-weight: 300;">
+                        {getData.Time}
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 25px; font-family:p22-underground, sans-serif;font-weight: 500;">
+                        Location
+                    </div>
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 20px; font-family:p22-underground, sans-serif; font-weight: 300;">
+                        {getData.Location}
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 25px; font-family:p22-underground, sans-serif;font-weight: 500;">
+                        Price
+                    </div>
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 20px; font-family:p22-underground, sans-serif; font-weight: 300;">
+                        {getData.Price}
+                    </div>
+                </div>
+								  <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 25px; font-family:p22-underground, sans-serif;font-weight: 500;">
+                        Guests
+                    </div>
+                    <div class="slds-col slds-size_6-of-12" style="font-size: 20px; font-family:p22-underground, sans-serif; font-weight: 300;">
+                        {getData.No_Of_Guests}
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-var-p-around_small slds-size_10-of-12">
+                        <!-- <img class="img" src={getData.ImageUrl} alt=""> -->
+                        <c-show-q-rcode record-id={getData.BookingId}></c-show-q-rcode>
+                    </div>
+                </div>
+            </div>
+    </lightning-layout-item>
+    </lightning-layout>
+    </template>

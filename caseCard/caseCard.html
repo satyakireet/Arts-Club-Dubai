@@ -1,0 +1,65 @@
+<template>
+    <div class="">
+<!-- 				<div class="logo_section">
+										<img src={imgLogo} class="logo_img" alt="logo" />
+				</div>  -->
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="12" small-device-size="12" medium-device-size="6" >
+             	
+								<h1 class="slds-p-bottom_medium recent_heading">Inquiries</h1>
+								  <div class=" slds-p-around_medium slds-align_absolute-center slds-text-align_left">
+                    <!-- <c-custom-carousel-wrapper></c-custom-carousel-wrapper> -->
+                    <c-create-case></c-create-case>
+                </div>
+                <template if:true={wiredCaseList.data}>
+                    <template for:each={wiredCaseList.data} for:item="cases">
+                <div onclick={navigateToViewCaseDetail} data-id={cases.Id} key={cases.Id} class="custom-box slds-box slds-p-around_medium  slds-m-bottom_medium slds-text-align_center card-tile-body">
+                  <!-- cards section strts here -->
+                  <div class="slds-grid slds-wrap ">
+                  <!-- icon sectio starts here -->
+                  <div class="slds-col slds-size_1-of-12 "> 
+                    <span >
+                        <lightning-icon icon-name="action:new_note" class="my-icon" alternative-text="New note" title="New note"></lightning-icon>
+                    </span>
+                  </div>
+                  <!-- icon sectio ends here --> 
+
+                  <!-- case status section starts here -->
+                  <div class="slds-float_left slds-col slds-size_5-of-12 slds-text-align_left slds-p-left_medium case_detail">
+                    <span>
+                        <h2 class="slds-m-bottom_small">Case Number : {cases.CaseNumber} </h2>
+                        	<h2>Priority : {cases.Priority} </h2>
+                    </span>
+                  </div>
+                  <!-- case status section starts here -->
+
+                  <!-- case detail section starts here -->
+                  <div class=" slds-float_left slds-col slds-size_6-of-12 slds-text-align_left slds-p-left_medium slds-border_left case_detail">
+                    <span>
+                      <h2 class="slds-m-bottom_small">Case status : {cases.Status} </h2>
+                        <h2>Subject : {cases.Subject} </h2>
+                    </span>
+                  </div>
+                
+                </div>
+                </div>
+            </template>
+            </template>
+								<template if:true={noInquiry}>
+									<h1  class="slds-align_absolute-center slds-text-align_center">
+											No Inquiry Record Found
+									</h1>
+								</template>
+            </lightning-layout-item>
+						 <lightning-layout-item  class="case_right_image" padding="around-small" size="12" small-device-size="12" medium-device-size="6" >
+								<div>
+								 <img 
+                        src={images}
+                        class="case_banner"
+                        alt="banner_img"
+                        />
+								 </div>
+       			 </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

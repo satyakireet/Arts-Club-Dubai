@@ -1,0 +1,54 @@
+.contact_detail_banner {
+
+}
+
+.card{
+    border-radius: 0.5rem;
+    background-color: white;
+
+}
+
+.conatct_details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+
+}
+
+.profile-card__img img{
+    display: block;
+    object-fit: cover;
+}
+
+.conatct_details img{
+    width: 8vw;
+    border-radius: 50%;
+    border: 2px solid white;
+    position:absolute;
+    left: 15px;
+    bottom: 10px;
+
+}
+
+.conatct_details{
+   
+}
+
+.conatct_details h2{
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-card__img img{
+    height: 10vh;
+    width: 22vw;
+    border-radius: 50%;
+
+	}
+}

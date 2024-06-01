@@ -1,0 +1,60 @@
+.edit_button{
+    background-color:  #b6876d
+;
+    color: white;
+    border-radius: 1rem;
+    padding: 5px 47px 5px 47px;
+    font-weight: 600;
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cancel_button{
+    background-color: white;
+    color:  #b6876d;
+    border-color:  #000066;
+    border-radius: 1rem;
+    padding: 5px 91px 5px 91px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cancel_btn_div{
+    justify-content: flex-end;
+
+}
+
+.submit_btn_div{
+    justify-content: flex-start;
+
+}
+
+
+  .card-tile-body {
+    border: 1px solid #b6876d;
+    border-radius: .25rem;
+    display: block;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 80%, #b6876d 100%);
+  }
+
+  .view_form_heading{
+    font-size: 20px;
+    font-weight: 700;
+    font-family:Georgia;
+  }
+
+    /* for mobile */
+@media only screen and (max-width: 750px) and (min-width: 300px) {
+
+        .cancel_btn_div{
+            justify-content: center;
+            /* padding-bottom: 0px; */
+            margin-bottom: 0px
+        }
+
+        .submit_btn_div{
+            justify-content: center;
+            /* padding-top: 0px; */
+            margin-top: 0px
+        }
+    }

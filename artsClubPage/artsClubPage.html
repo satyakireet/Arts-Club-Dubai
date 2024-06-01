@@ -1,0 +1,39 @@
+<template>
+
+<lightning-tabset variant="scoped">
+<lightning-tab label="Upcoming Event">
+<lightning-layout multiple-rows="">
+<lightning-layout-item for:each={resultData} for:item="data"  key={data.Id} class="slds-m-top_medium slds-m-bottom_large slds-align_absolute-center" size="12" large-device-size="4" small-device-size="12" medium-device-size="6">
+    <div class="slds-grid slds-wrap">
+            <!-- <template for:each={resultData} for:item="data"> -->
+                <div class="container">
+                    <!-- <h1 style="padding-top: 10%;font-size: 20px; font-family: GTSuper-Light, serif;">{data.Name}</h1> -->
+                    <div class="card">
+                        <div class="slide slide1">
+                            <div class="content">
+                                <img class="img" src={data.Event_Image_URL__c} alt="" value={data.Event_Image_URL__c}
+                                    onclick={handleOnClick}>
+                                    <div class="slds-box slds-align_absolute-center imgOverlap">
+                                        <p>{data.Event_Type__c}</p>
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="slide slide2">
+                            <div class="content">
+                                <h1 class="img_title" style="font-weight: 900;">{data.Name}</h1>
+                                <h1 class="img_title">{data.Date__c}</h1>
+                                <lightning-button label="Read more" title="Read More" src={data.Event_Image_URL__c} value={data.Event_Image_URL__c} onclick={handleOnClick}></lightning-button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <!-- </template> -->
+</div>
+</lightning-layout-item>
+</lightning-layout>
+</lightning-tab>
+</lightning-tabset>
+
+
+</template>

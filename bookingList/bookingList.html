@@ -1,0 +1,35 @@
+<!-- <template>
+    <template if:true={bookings.data}>
+        <ul>
+            <template for:each={bookings.data} for:item="booking">
+                <li key={booking.Id} onclick={handleBookingClick}>
+                    {booking.Name}
+                </li>
+            </template>
+        </ul>
+    </template>
+</template> -->
+
+<template>
+    <lightning-card title="Booking Records">
+         <!-- <lightning-datatable
+            data={bookingRecords}
+            columns={columns}
+            key-field="Id"
+            onclick={handleRowAction}>
+        </lightning-datatable>  -->
+    <lightning-card>
+        <template for:each={bookingRecords} for:item="row">
+            <div key={row.Id} onclick={handleRowAction}>
+                <p >{row.Name}</p>
+            </div>
+            
+        </template>
+    </lightning-card>
+        <template if:true={selectedRecordId}>
+            <div>
+                <h2>{recordDetails.Name}</h2>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+.customClass1{
+    background-color:  #b6876d;
+    color: white;
+    border-radius: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-weight: 500;
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 50%;
+    
+}
+
+.newCaseButton{
+    background-color:  #b6876d;
+    color: white;
+    border-radius: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-weight: 500;
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-tile-body {
+  border: 1px solid #d2955d;
+  border-radius: .25rem;
+  display: block;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 80%, #fae8d2 100%);
+}

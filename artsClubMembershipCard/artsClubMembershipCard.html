@@ -1,0 +1,54 @@
+<template>
+		<div class="slds-align_absolute-center ">
+				
+		<lightning-layout multiple-rows="true">
+		 <lightning-layout-item class="top_card slds-p-around_small"  size="12" large-device-size="12" small-device-size="12" medium-device-size="12">
+				 
+                <img src={artClubLogo} class="logoImg slds-align_absolute-center" alt="Profile_img"/>
+                <p>The Arts Club Dubai</p>
+                <h3 >Membership Card</h3> 
+				 
+				 <div class="slds-grid slds-m-around_small slds-align_absolute-center">
+							<div class="slds-col slds-size_4-of-12 profile_section ">
+								<span>
+										<img src={Profileimage} class="profile_img " alt="Profile_img"/>
+									</span> 
+							</div>
+						 <div class="slds-col slds-size_8-of-12 Member_section">
+								<span>
+								 <img src={MembershipImage} class="Member_img" alt="Member_img"/>
+								 </span>
+							</div>
+				 </div>
+				 
+				 <h6>{firstName} &nbsp;{lastName} ({memberId})</h6>
+				 <h5><lightning-formatted-date-time value={date}></lightning-formatted-date-time></h5>
+
+				<template if:false={showQrCode}>
+					<h5 class="slds-m-top_medium">Select Your Device</h5>
+					<div class="device_logos">
+						<div data-id="android" onclick={onShowQr}>
+							<img src={adroidLogo} class="device_img"  />
+						</div>
+						<div data-id="ios" onclick={onShowQr}>
+							<img src={iosLogo} class="device_img"  />
+						</div>
+					</div>
+				</template>
+
+				<template if:true={showQrCode}>
+				 <div class='slds-m-top_medium'>
+					
+						 <c-show-contact-q-r-code recordid={contactID} firstname={firstName} lastname={lastName} salutation={salutation} memberid={memberId}></c-show-contact-q-r-code>
+				 </div>
+				</template>
+
+				 <h4 class="slds-m-top_x-small text-center">ACCESS CARD</h4>
+        </lightning-layout-item>
+		</lightning-layout>
+		<template if:true={showWalletButton}>
+			<lightning-button variant="brand" label={buttonLabel} title="Primary action" onclick={handleClickWallet} class="wallet_button"></lightning-button>
+		</template>
+						</div>
+
+</template>

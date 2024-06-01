@@ -1,0 +1,68 @@
+<template>
+    <lightning-card>
+        <div class="custom-header">
+            <div class="slds-grid slds-wrap slds-var-p-around_small">
+                <div class="slds-col slds-size_6-of-12">
+                    <span class="singleText" style="font-size: 16px;">For {counter} Guest</span>
+                    <h1 style="font-family:'GTSuper-Light', serif;">The Language of Flowers</h1>
+
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                <lightning-button-icon icon-name="utility:dash" alternative-text="Decrement" onclick={handleDecrement}></lightning-button-icon>
+                <span>&nbsp;&nbsp;{counter}&nbsp;&nbsp;</span>
+               <lightning-button-icon icon-name="utility:add" alternative-text="Increment" onclick={handleIncrement}></lightning-button-icon>
+                </div>
+
+                <div class="slds-col slds-size_2-of-12">
+                    <h1>AED {totalPrice}</h1>
+                </div>
+                <div class="slds-col slds-size_2-of-12">
+                    <lightning-button variant="brand" label="continue" title="continue" onclick={handleClick}></lightning-button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-var-p-around_small">
+            <div class="slds-col slds-size_12-of-12 slds-var-p-around_small">
+                <div class="greyColor">
+                    <img style="width: 100%"  src="https://www.theartsclub.co.uk/wp-content/uploads/2023/04/8-language-of-flowers-899x999.jpg" alt="The Language of Flowers" />
+                </div>
+            </div>
+        </div>
+         <div class="slds-grid slds-gutters slds-var-p-around_small">
+                   <div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12">
+                    <div class="greyColor">
+                     <p style="font-weight: bold;font-style: normal; font-size: 20px;">
+                        Gather a team together and listen carefully to the questions posed by our quizmaster at the Arts & Culture Quiz Night this month, for an entertaining test of your knowledge on
+                        all things art, food, pop culture and everything else under the sun! Taking place in Vega this quiz will tease your brain and melt your mind but not without a side of food for
+                        thought, served with delicious canapés and selected wines.
+                    </p>
+                    <br>
+                     <p style="font-weight: bold;font-style: normal; font-size: 20px;">
+                        Gather a team together and listen carefully to the questions posed by our quizmaster at the Arts & Culture Quiz Night this month, for an entertaining test of your knowledge on
+                        all things art, food, pop culture and everything else under the sun! Taking place in Vega this quiz will tease your brain and melt your mind but not without a side of food for
+                        thought.
+                    </p>
+                    <br>
+            </div>
+            </div>
+             
+        <div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12">
+    <div class="greyColor">
+      <p style="font-weight: bold;font-style: normal; font-size: 20px;">VENUE DETAILS</p>
+      
+      <p style="font-weight: bold;font-style: normal; font-size: 15px;">SWI</p>
+      
+      <p style="font-weight: bold;font-style: normal; font-size: 15px;">The Arts Club ICD</p>
+      
+     
+      <br>
+      
+      <div>
+        <lightning-map map-markers={mapMarkers} markers-title={markersTitle} zoom-level={zoomLevel} style="width: 70%;"></lightning-map>
+      </div>
+    </div>
+  </div>
+  <button onclick={handleButtonClick}>Open URL</button>
+</div>
+    </lightning-card>
+</template>

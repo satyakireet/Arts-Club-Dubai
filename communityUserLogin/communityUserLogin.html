@@ -1,0 +1,124 @@
+<template>
+
+    <lightning-card>
+    <div  class="slds-media__body" for:each={eventdata.data} for:item="item" for:index="index" key={item.Id}>
+      <center>
+        <img src={item.Image__c} style="width:100%;height:700px;"/>
+        </center>
+    </div>
+</lightning-card>
+
+
+    <div for:each={eventdata.data}  for:item="item" for:index="index" key={item.Id}  style="background:white;  float:left; width:500px" >
+        <p style="font-size:30px;">{item.Name}</p>
+        <p style="font-size:20Px; color:gray;" >{item.Description__c}</p> 
+     </div>
+
+<div for:each={eventdata.data}  for:item="item" for:index="index" key={item.Id}  style="background:rgb(212 212 216); float:right border:1;">
+    <table style="width: 600px; cellpadding:0; cellspacing:0; vertical-align: top" >
+       <thead> <p style="font-size:3em">Event Details</p></thead>
+        <tr>
+        <th style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">Date:</th> 
+        <th style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">Location:</th>
+        </tr>
+        <tr>
+            <td style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">{item.Date__c}</td>
+            <td style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">{item.Location__c}</td> 
+        </tr><br><br><br><br>
+
+         <tr>
+        <th style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">Time:</th>
+        <th style="padding: 6px; vertical-align: top; background-color:  rgb(212 212 216); color: rgb(82 82 91); width: 25%;">Price:</th>
+        </tr>
+
+         <tr>
+            <td style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">{item.Time__c}</td>
+            <td style="padding: 6px; vertical-align: top; background-color: rgb(212 212 216); color: rgb(82 82 91); width: 25%;">{item.Price__c}</td> 
+        </tr>
+                  
+  
+    </table>  
+   
+</div>
+
+
+    <div if:true={showBasicInfo}>
+        <template if:true={memberLoggedIn}>
+
+            <div style="padding-left:10%;backgroound:rgb(212, 212, 216)">
+             <b>Click here </b>to make a booking
+            </div>
+         
+        </template>
+    
+        <template if:false={memberLoggedIn}>
+            <div class ='memberLogin' style="padding-left: 20%;padding-right: 20%;">
+                <img src={artsClubimage} style="width:20%;height: 20%"></img>
+               </div>
+               <div style="padding-left:20%" onclick={handleLoginTemplate}>
+                Please <b>sign in </b>to your member <br/> &nbsp;&nbsp;&nbsp; account to book tickets
+               </div>
+        </template>
+    </div>
+
+    
+    <template if:true={isShowLoginPage}>
+        <form>
+
+            <div class="main-container slds-grid slds-grid_vertical">
+       
+       
+                <div class=slds-col>
+       
+                    <h1 class="text-align-center">
+                        <b class="main-heading">Welcome to Community</b> 
+                    </h1>
+                    
+                   
+                    <p class="slds-var-p-top_medium text-align-center">
+                        <span class="sub-heading">Please login below or click "Register" to sign up!</span>
+                    </p>
+       
+                    <template if:true={errorCheck}>
+                        <div class="error slds-var-p-around_x-small slds-var-p-top_small" role="alert">
+                            <span>{errorMessage}</span>
+                        </div>
+                    </template>
+       
+                </div>
+       
+                <div class="slds-col slds-var-p-top_small">                
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                            <lightning-icon class="input-icon" icon-name="utility:user" alternative-text="username" size="xx-small"></lightning-icon>
+                            <input type="text" data-id="inputUsername" placeholder="Username" class="slds-input input-element" onchange={handleUserNameChange} required />
+                        </div>
+                    </div>
+                </div>
+       
+                <div class="slds-col slds-var-p-top_small">               
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                            <lightning-icon class="input-icon" icon-name="utility:lock" alternative-text="username" size="xx-small"></lightning-icon>
+                            <input type="password" data-id="inputPassword" placeholder="Password" class="slds-input input-element" onchange={handlePasswordChange} required/>
+                        </div>
+                    </div>
+                </div>
+       
+                <div class="slds-col slds-var-p-top_small">
+                    <button type="submit" class="login-button slds-button" onclick={handleLogin}>Log In</button>
+                </div>
+       
+                <div class="slds-col slds-var-p-top_small">
+                    <a href="/Cydehustle/s/login/ForgotPassword" class="forgot-password-text">Forgot your password?</a>
+                    <a href="/Cydehustle/s/login/SelfRegister" class="register-text">Register</a>
+                </div>
+       
+            </div>
+       
+            </form>
+    </template>
+
+
+    
+</template>

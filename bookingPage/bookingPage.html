@@ -1,0 +1,42 @@
+<template>
+
+    <div class="customClass">
+
+        <div class="slds-form-element">
+
+            <img src={artsClubimage} style="width:100%;height: 70%">
+
+            <br /> <br />
+
+            <div class="slds-p-left_xx-small">
+
+                <div class="slds-grid slds-gutters">
+
+                    <div class="slds-col slds-size_6-of-12">
+
+                        <lightning-input value={BookingId} label="BookingId"></lightning-input>
+                        <lightning-input value={MemberEvents} label="Member Events"></lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_6-of-12">
+
+                        <lightning-input value={NoOfGuests} label="No Of Guests"></lightning-input>
+                        <lightning-input value={Email} label="Email"></lightning-input>
+                    </div>
+
+                </div>
+
+
+            </div> <br />
+
+
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" name="save" label="SUBMIT FORM">
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </div>
+</template>

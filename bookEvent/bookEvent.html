@@ -1,0 +1,139 @@
+<template>
+	<div>
+		<Center style="background-color:rgba(255,99,71,0.2)">
+  <lightning-card title="Event Booking" icon-name="standard:sales_path">
+	<lightning-progress-indicator current-step={currentvalue} type="path" variant="base">
+		<lightning-progress-step label="Event Details" value="1" onclick={evenHandler}></lightning-progress-step>
+		<lightning-progress-step label="Booking Details" value="2" onclick={bookHandler}></lightning-progress-step>
+		<lightning-progress-step label="Sync to seven rooms" value="3" onclick={syncHandler}></lightning-progress-step>
+			
+	</lightning-progress-indicator>
+	<br>
+	</lightning-card>
+	</center>
+
+	</div>
+	<template if:true={showEventDetails}>
+		<!--<c-event-cmp></c-event-cmp>-->
+		<c-event-cmp onguestfromchildcmp ={handlechildevent}></c-event-cmp>
+    </template>		
+	
+	<div if:true={ShowBookingDetails}>
+
+		<div style="padding:20px;background-color:rgb(240,240,240)" >
+		<h1 style="text-align:center"> <b>Your Information</b> </h1>
+		<div class= "slds-grid slds-gutters">
+
+					<div class="slds-col slds-size_6-of-12">
+						<lightning-input label="First Name" value={currentUserFirstName}></lightning-input>
+						<lightning-input label="Email Address" value={currentUserEmail}></lightning-input>
+					    
+					</div>
+
+					<div class="slds-col slds-size_6-of-12">
+						<lightning-input label="Last Name" value={currentUserLastName}></lightning-input>
+						<lightning-input label="Phone No" value={currentPhone}></lightning-input>
+					</div>
+
+		</div> <br/><br/>
+
+			<h1 style="text-align:center"> <b>Payment </b></h1>
+		<div class= "slds-grid slds-gutters">
+
+					<div class="slds-col slds-size_6-of-12">
+						<lightning-input label="First Name" value=""></lightning-input>
+						<lightning-input label="Card Number" value=""></lightning-input>
+					</div>
+
+					<div class="slds-col slds-size_6-of-12">
+						<lightning-input label="Last Name" value=""></lightning-input>
+					</div>
+
+		</div> <br/> <br/>
+
+		<h1 style="text-align:center"> <b>Summary</b></h1> <br/>
+		<div >
+
+			<div >
+					<lightning-button-icon icon-name="utility:checkin" alternative-text="Delete" class="test slds-m-left_xx-small" variant="bare" title="Delete"></lightning-button-icon>           
+				&nbsp;
+				Vega
+			</div> <br/>
+			<div style="border-top: 1px solid black">
+				<lightning-button-icon icon-name="utility:event" alternative-text="Delete" class="test slds-m-left_xx-small" variant="bare" title="Delete"></lightning-button-icon>           
+				&nbsp;
+				DJ Bliss & Mr Shef Codes
+			</div> <br/>
+			<div style="border-top: 1px solid black">
+				<lightning-button-icon icon-name="utility:clock" alternative-text="Delete" class="test slds-m-left_xx-small" variant="bare" title="Delete"></lightning-button-icon>           
+				&nbsp;
+				Wed, May 21 - 8:00 pm
+			</div> <br/>	
+
+			<div style="border-top: 1px solid black">
+				<lightning-button-icon icon-name="utility:groups" alternative-text="Delete" class="test slds-m-left_xx-small" variant="bare" title="Delete"></lightning-button-icon>           
+				&nbsp;
+				{noofGuest.counter} guest
+			</div> <br/>
+			<div style="border-top: 1px solid black">
+				
+				<div class= "slds-grid slds-gutters">
+
+					<div class="slds-col slds-size_6-of-12">
+						<span> <lightning-button-icon icon-name="utility:moneybag" alternative-text="Delete" class="test slds-m-left_xx-small" variant="bare" title="Delete"></lightning-button-icon> </span>
+						&nbsp; 
+						<span>(1) DJ & Culture Night </span> <br/>
+
+						
+					</div>
+
+					<div class="slds-col slds-size_6-of-12">
+						<span>INR 238.1</span> <br/>
+						
+					</div>
+
+				</div>
+				
+			</div> <br/>
+
+			<div style="border-top: 1px solid black;padding-left:3px">
+				<div class= "slds-grid slds-gutters">
+
+					<div class="slds-col slds-size_6-of-12">
+						<span>Event (DJ & Culture Night)</span> <br/>
+						<span>VAT & Authority Fee</span> <br/>
+						<span>Order Total</span>
+						
+					</div>
+
+					<div class="slds-col slds-size_6-of-12">
+						<span>INR {eventPrice}</span> <br/>
+						<span>INR {VATFee}</span> <br/>
+						<span>INR {totalEventPrice}</span>
+					</div>
+
+		</div> <br/>
+			</div>	
+
+			
+
+			<div class = "slds-align_absolute-center">
+
+				
+					<lightning-button variant="Brand" label="Submit" title="titleName" onclick={handleSubmitClick}></lightning-button>
+
+				
+			</div>			
+	
+
+		</div>
+
+	</div>
+
+    </div>		
+
+	<template if:true={syncSevenRoomPage}>
+	</template>		
+
+	
+ </template>

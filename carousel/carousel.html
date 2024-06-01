@@ -1,0 +1,32 @@
+<!--<template>
+    <lightning-carousel>
+        <template if:true={photos}>
+            <template for:each={photos} for:item="pics">
+        <lightning-carousel-image class="carousel-img"
+         key={pics.id}
+         src={pics.src}>
+
+        </lightning-carousel-image>  
+            </template>
+        </template>  
+    </lightning-carousel>    
+</template>-->
+<template>
+  <div class="slds-is-relative container" style= "width:100%">
+    <template for:each={slidesData} for:item="slide">
+      <div key={slide.index} class={slide.slideClass}>
+        <div if:false={hideSlideNumber} class="slideNumbers">{slide.index}/{slidesData.length}</div>
+        <a href={slide.href}>
+        <img src={slide.src} style={maxHeight} key={slide.Id} />
+        </a>
+      </div>
+    </template>
+    <a if:false={hideNavigationButtons} class="prev" onclick={slideBackward}>&#10094;</a>
+    <a if:false={hideNavigationButtons} class="next" onclick={slideForward}>&#10095;</a>
+  </div>
+  <div if:false={hideNavigationDots} class="slds-text-align_center slds-p-around_medium">
+    <template for:each={slidesData} for:item="slide">
+      <span key={slide.index} class={slide.dotClass} data-id={slide.index} onclick={showSlide}></span>
+    </template>
+  </div>
+</template>

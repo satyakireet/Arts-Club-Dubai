@@ -1,0 +1,102 @@
+.dummyClass{color:black;}
+
+.top_card{
+		background: rgb(204, 182, 133);
+		border-radius:0.5rem;
+		max-width: 500px;
+}
+.profile_section{
+		background:white;
+}
+
+.device_button{
+	border-radius: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-weight: 500; 
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.device_logos{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 10px;
+}
+
+.device_img{
+	width: 10vw;
+}
+
+.wallet_button {
+	border-radius: 1rem;
+    padding: 5px 10px 5px 10px;
+    font-weight: 500; 
+    border-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	position: fixed;
+    bottom: 15px;
+
+  }
+  
+
+.top_card h6{
+		text-transform: uppercase;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.top_card h5{
+		  text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.top_card h4{
+		  text-align: center;
+    font-size: 12px;
+}
+.top_card .logoImg{
+		border-radius:50%;
+		height:83px;
+}
+
+.slds-size_8-of-12{
+		width:auto !important;
+}
+
+.top_card .Member_img{
+		height:111px;
+}
+
+.top_card .profile_img{
+		height:111px;
+		    padding: 10px;
+		border-radius:50%;
+}
+
+.top_card p{
+		font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.top_card h3{
+		font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+ /* for mobile */
+ @media only screen and (max-width: 600px) {
+	
+	.device_img{
+		width: 18vw;
+	}
+
+	.top_card .logoImg{
+		border-radius:50%;
+		height:50px;
+}
+  }

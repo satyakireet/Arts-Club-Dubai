@@ -1,0 +1,70 @@
+.my-icon {
+    --sds-c-icon-color-foreground-default: #b6876d;
+    --sds-c-icon-color-background: #b6876d;
+}
+
+.logo_section{
+		    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo_img{
+		width:130px;
+}
+.case_banner{
+    width: 100%;
+    height: 100vh;
+  margin-top:0px !important;
+		  padding-top:0px !important;
+
+}
+
+.case_detail{
+    
+}
+
+.recent_heading{
+  font-size: 20px;
+  font-weight: 700;
+  font-family:Georgia;
+}
+
+h2,p{
+		font-weight:500;
+		font-size:15px;
+		
+}
+.card-tile {
+    border: 1px solid #b6876d;
+    background-color: rgb(182, 135, 109);
+    border-radius: .25rem;
+    display: block;
+  }
+  .card-silhouette {
+    height: 200px;
+  }
+  .card-tile-body {
+	  height: 110px;
+    border: 1px solid #d2955d;
+    border-radius: .25rem;
+    display: block;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 80%, #fae8d2 100%);
+  }
+
+  /* for mobile */
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size:10px !important;
+			    margin-left: 12px;
+  }
+		.case_detail{
+				float:right !important;
+		}
+		
+		.case_right_image{
+	display:none !important;
+}
+
+	
+}
